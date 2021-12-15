@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="2019-December-Silver-3.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="milkvisits.in" />
+    <None Include="milkvisits.out" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
