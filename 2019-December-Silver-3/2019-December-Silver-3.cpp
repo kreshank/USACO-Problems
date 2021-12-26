@@ -11,91 +11,51 @@ LANG: C++
 
 using namespace std;
 
-int N, M;
-short adj[10001][10001];
-bool v[10001];
+int N, M, counts[100001], cnt;
+char col[100001];
+vector<int> adj[100001];
 
-void printArr() {
-    for (int i = 1; i <= M; i++) {
-        for (int j = 1; j <= M; j++) {
-            cout << adj[i][j] << " ";
-        }
-        cout << "\n";
+void dfs(int x) {
+    if (counts[x]) return;
+    counts[x] = cnt;
+    for (auto& a : adj[x]) {
+        if (col[a] == col[x]) dfs(a); // Find all that have the same color...
     }
-    cout << "\n";
-}
-
-int pin(char c) {
-    if (c == 'H') return 1;
-    return 2;
-}
-
-int query(int A, int B) {
-    if (adj[A][B] != 0) {
-        return adj[A][B];
-    }
-    if (adj[B][A] != 0) {
-        return adj[A][B] = adj[B][A];
-    }
-    v[A] = true;
-
-    for (int i = 1; i <= N; i++) {
-        if (!v[i]) { // If not visited
-            if (adj[A][i] != 0) { // I
-                adj[i][B] = query(i, B);
-                if (adj[A][i] != adj[i][B]) {
-                    adj[A][B] = 3;
-                    adj[B][A] = 3;
-                }
-                else {
-                    adj[A][B] = adj[i][B];
-                    return adj[A][B];
-                }
-            }
-        }
-    }
-    return adj[A][B];
 }
 
 int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
     ofstream fout("milkvisits.out");
     ifstream fin("milkvisits.in");
 
     fin >> N >> M;
 
-    memset(adj, 0, N * N);
-
     string line;
     fin >> line;
-
-    // Store the color of the node
-    for (int i = 1; i <= N; i++) {
-        adj[i][i] = pin(line[i - 1]);
-    }
-
-    // Process all two-way paths
+    for (int i = 1; i <= N; i++)
+        col[i] = line[i - 1];
+    
     int A, B;
     for (int i = 1; i < N; i++) {
         fin >> A >> B;
-        if (adj[A][A] != adj[B][B])
-            adj[A][B] = 3;
-        else {
-            adj[A][B] = adj[A][A];
-        }
-        adj[B][A] = adj[A][B];
+        adj[A].push_back(B);
+        adj[B].push_back(A);
     }
 
-    char c;
+    cnt = 0;
+    for (int i = 1; i <= N; i++) {
+        if (!counts[i]) {
+            cnt++;
+            dfs(i);
+        }
+    }
+
     for (int i = 1; i <= M; i++) {
-        memset(v, false, sizeof v);
-        fin >> A >> B >> c;
-
-        int result = query(A, B);
-
-        if (result == 3 || result == pin(c))
-            fout << 1;
-        else
-            fout << 0;
+        int A, B;
+        char C;
+        fin >> A >> B >> C;
+        if (col[A] == C || counts[A] != counts[B]) fout << 1;
+        else fout << 0;
     }
     fout << "\n";
     fout.close();
