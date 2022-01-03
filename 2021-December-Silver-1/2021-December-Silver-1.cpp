@@ -1,4 +1,8 @@
 /*
+Submitted on contest date, 17/21, fail.
+*/
+
+/*
 ID: krxnc
 TASK: Closest Cow Wins
 LANG: C++
