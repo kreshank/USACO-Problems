@@ -133,7 +133,7 @@ SAMPLE OUTPUT:
 
 /*
 Solution: We use dynamic programming to solve considering there is only N * K = 250000 cases
-which is well within memory range. O(N * K^2) time. 
+which is well within memory range. O(N * K^2) time.
 
 We take a bottom-up approach in order to create an array where dp[N][K] (Nth node, with K skips used)
 is the answer. dp[N][K] = min(dp[N][K], dp[i][j] + dist) where dp[i][j] is any node that can travel to dp[N][K]
