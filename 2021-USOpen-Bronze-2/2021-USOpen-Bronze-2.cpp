@@ -36,12 +36,9 @@ int main() {
                 
                 int &cur = seniority[iID][jID], &oth = seniority[jID][iID];
 
-                if (rep[j - 1] < rep[j] && alpha && !cur && !oth) { // If string I is greater than string J
-                    cur = oth = 3;
-                }
-                else { // If not in alphabetical order, can draw conclusions
+                if (rep[j - 1] >= rep[j] || !alpha) { // If not in alphabetical order, can draw conclusions
                     alpha = false;
-                    if (cur == 0 || cur == 3) {
+                    if (cur == 0) {
                         cur = 1;
                         oth = 2;
                     }
@@ -53,7 +50,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             if (i == j) cout << "B";
-            else if (seniority[i][j] == 3) cout << "?";
+            else if (seniority[i][j] == 0) cout << "?";
             else cout << seniority[i][j] - 1;
         }
         cout << "\n";
