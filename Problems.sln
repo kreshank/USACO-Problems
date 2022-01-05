@@ -71,6 +71,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2014-December-Silver-2", "S
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2014-December-Silver-3", "Silver\2014 December\2014-December-Silver-3\2014-December-Silver-3.vcxproj", "{F2E9C8EB-C53C-4F52-A96E-490C827E8B3C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2021-February-Bronze-2", "Bronze\2021 February\2021-February-Bronze-2\2021-February-Bronze-2.vcxproj", "{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -255,6 +257,14 @@ Global
 		{F2E9C8EB-C53C-4F52-A96E-490C827E8B3C}.Release|x64.Build.0 = Release|x64
 		{F2E9C8EB-C53C-4F52-A96E-490C827E8B3C}.Release|x86.ActiveCfg = Release|Win32
 		{F2E9C8EB-C53C-4F52-A96E-490C827E8B3C}.Release|x86.Build.0 = Release|Win32
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Debug|x64.ActiveCfg = Debug|x64
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Debug|x64.Build.0 = Debug|x64
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Debug|x86.ActiveCfg = Debug|Win32
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Debug|x86.Build.0 = Debug|Win32
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Release|x64.ActiveCfg = Release|x64
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Release|x64.Build.0 = Release|x64
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Release|x86.ActiveCfg = Release|Win32
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -291,6 +301,7 @@ Global
 		{355874E5-BC18-4EC8-B3B5-824CC94313ED} = {C8FF1701-3D85-454D-8D0E-FAE75EF2C097}
 		{C8EA7228-D898-4600-ACA9-9DBFB53455B8} = {A91F4AF0-EEAC-4932-BC69-4C0EA91FE204}
 		{F2E9C8EB-C53C-4F52-A96E-490C827E8B3C} = {A91F4AF0-EEAC-4932-BC69-4C0EA91FE204}
+		{228BC1DD-B09C-427D-8EBD-5B9CDA8242FB} = {C8FF1701-3D85-454D-8D0E-FAE75EF2C097}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85D7AD4C-141C-4A58-9893-89251385B4BE}

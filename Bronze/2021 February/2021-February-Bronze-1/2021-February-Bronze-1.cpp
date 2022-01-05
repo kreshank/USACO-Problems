@@ -11,37 +11,37 @@ LANG: C++
 #include <set>
 
 using namespace std;
-typedef pair<string, string> pss;
-typedef pair<pss, bool> pssi;
+typedef pair<int, int> pii;
 
 
 string zodiacs[] = {"Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig", "Rat"};
 map<string, int> zid;
-set<string> names = { "Bessie", "Elsie" };
-vector<pssi> input;
+map<string, pii> cowYear;
 int N;
 
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
-    for (int i = 0; i < 12; i++) zid[zodiacs[i]] = i + 1;
+    for (int i = 0; i < 12; i++) zid[zodiacs[i]] = i;
 
     cin >> N; cin.ignore();
-    input.resize(N);
+    cowYear["Bessie"] = { 0,0 };
 
-    string s;
-    pssi p;
+    string line[8];
     for (int i = 0; i < N; i++) {
-        cin >> s; p.first.first = s;
-        names.insert(s);
-        cin >> s; cin >> s; // loop
-        int pre;
-        cin >> s; pre = (s == "previous") ? -1 : 1;
-        cin >> s; p.second = zid[s] * pre; // {string,string,}, int; int = change from other
-        cin >> s; cin >> s;
-        cin >> s; p.first.second = s; // second
+        for (int WORD = 0; WORD < 8; WORD++) cin >> line[WORD];
+        int target = zid[line[4]], calc;
+        pii from = cowYear[line[7]];
+        bool pre = (line[3] == "previous");
+        calc = (target - from.first) % 12;
+        if (pre) {
+            calc = 12 - calc;
+            calc %= 12;
+            calc *= -1;
+        }
+        if (from.second == target) calc = 12;
+        cowYear[line[0]] = {from.first + calc, target};
     }
-
-
-    return 0;
+    
+    cout << abs(cowYear["Elsie"].first) << "\n";
 }
