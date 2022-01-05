@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2014-Silver-3.cpp" />
+    <ClCompile Include="2014-December-Silver-3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cowjog.in" />

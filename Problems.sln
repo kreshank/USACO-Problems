@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2014-December-Silver-1", "..\2014-Silver-1\2014-Silver-1.vcxproj", "{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Resources", "..\Header\Header.vcxproj", "{2B3EA23C-375E-4896-8B38-B10888E097F7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2014-December-Silver-2", "2014-Silver-2\2014-Silver-2.vcxproj", "{0EC33B88-9D4E-49B7-9D86-981671C77D8D}"
@@ -85,14 +83,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Debug|x64.ActiveCfg = Debug|x64
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Debug|x64.Build.0 = Debug|x64
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Debug|x86.ActiveCfg = Debug|Win32
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Debug|x86.Build.0 = Debug|Win32
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Release|x64.ActiveCfg = Release|x64
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Release|x64.Build.0 = Release|x64
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Release|x86.ActiveCfg = Release|Win32
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D}.Release|x86.Build.0 = Release|Win32
 		{2B3EA23C-375E-4896-8B38-B10888E097F7}.Debug|x64.ActiveCfg = Debug|x64
 		{2B3EA23C-375E-4896-8B38-B10888E097F7}.Debug|x64.Build.0 = Debug|x64
 		{2B3EA23C-375E-4896-8B38-B10888E097F7}.Debug|x86.ActiveCfg = Debug|Win32
@@ -282,7 +272,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FB99C16B-E44A-417A-85D2-4CBA9B7C341D} = {A91F4AF0-EEAC-4932-BC69-4C0EA91FE204}
 		{2B3EA23C-375E-4896-8B38-B10888E097F7} = {1119EBD9-8B0F-4360-9784-8906F1BB6002}
 		{0EC33B88-9D4E-49B7-9D86-981671C77D8D} = {A91F4AF0-EEAC-4932-BC69-4C0EA91FE204}
 		{D568FF74-BA16-47E8-A8D1-16B0D1A1114A} = {A91F4AF0-EEAC-4932-BC69-4C0EA91FE204}
