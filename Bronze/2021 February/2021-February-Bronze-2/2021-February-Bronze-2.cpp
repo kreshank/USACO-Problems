@@ -1,20 +1,51 @@
-// 2021-February-Bronze-2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+ID: krxnc
+TASK: Comfortable Cows
+LANG: C++
+*/
 
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+//Definitions
+typedef pair<int, int> pii;
+typedef long long ll;
+
+int N;
+int grid[1001][1001];
+int neighbors[1001][1001];
+
+int main() {
+	ios_base::sync_with_stdio(false); cin.tie(NULL);
+
+	cin >> N;
+
+	int x, y, comf = 0;
+	for (int cowCount = 0; cowCount < N; cowCount++) {
+		cin >> x >> y;
+		grid[x][y] = 1;
+		if (neighbors[x][y] == 3)
+			comf++;
+
+		int nx, ny;
+		int dx[] = { -1, 1, 0, 0 }, dy[] = { 0,0,-1,1 };
+
+		for (int i = 0; i < 4; i++) {
+			nx = dx[i] + x;
+			ny = dy[i] + y;
+			if (nx < 0 || ny < 0) continue;
+			if (nx >= 1000 || ny >= 1000) continue;
+
+			int& k = neighbors[nx][ny];
+			if (grid[nx][ny]) {
+				if (k == 2)
+					comf++;
+				else if (k == 3)
+					comf--;
+			}
+			k++;
+		}
+
+		cout << comf << "\n";
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
