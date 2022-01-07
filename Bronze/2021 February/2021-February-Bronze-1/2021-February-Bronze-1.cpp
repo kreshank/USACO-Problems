@@ -16,7 +16,7 @@ typedef pair<int, int> pii;
 
 string zodiacs[] = {"Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig", "Rat"};
 map<string, int> zid;
-map<string, pii> cowYear;
+map<string, int> cowYear;
 int N;
 
 
@@ -25,23 +25,22 @@ int main() {
     for (int i = 0; i < 12; i++) zid[zodiacs[i]] = i;
 
     cin >> N; cin.ignore();
-    cowYear["Bessie"] = { 0,0 };
+    cowYear["Bessie"] = 0;
 
-    string line[8];
+    string child, born, in, dir, zodiac, year, from, parent;
     for (int i = 0; i < N; i++) {
-        for (int WORD = 0; WORD < 8; WORD++) cin >> line[WORD];
-        int target = zid[line[4]], calc;
-        pii from = cowYear[line[7]];
-        bool pre = (line[3] == "previous");
-        calc = (target - from.first) % 12;
-        if (pre) {
-            calc = 12 - calc;
-            calc %= 12;
-            calc *= -1;
+        cin >> child >> born >> in >> dir >> zodiac >> year >> from >> parent;
+
+        int chZID = zid[zodiac];
+        int parZID = cowYear[parent];
+        int inc = (dir == "next") ? 1 : -1;
+
+        int a = inc;
+        while ((parZID + a - chZID) % 12 != 0) {
+            a += inc;
         }
-        if (from.second == target) calc = 12;
-        cowYear[line[0]] = {from.first + calc, target};
+        cowYear[child] = parZID + a;
     }
     
-    cout << abs(cowYear["Elsie"].first) << "\n";
+    cout << abs(cowYear["Elsie"]) << "\n";
 }
