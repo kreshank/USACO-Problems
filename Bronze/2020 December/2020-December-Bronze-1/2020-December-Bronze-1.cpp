@@ -15,12 +15,22 @@ using namespace std;
 typedef pair<int, int> pii;
 typedef long long ll;
 
-int N;
+vector<int> list(7);
 
 int main() {
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
 
-	cin >> N;
+	for (int i = 0; i < 7; i++) cin >> list[i];
 
-	return 0;
+	sort(list.begin(), list.end());
+
+	int A, B, C, AB, BC, CA, ABC;
+
+	A = list[0];
+	B = list[1];
+	ABC = list[6];
+
+	C = ABC - A - B;
+
+	cout << A << " " << B << " " << C << "\n";
 }
