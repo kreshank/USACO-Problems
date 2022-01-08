@@ -1,12 +1,11 @@
 /*
 ID: krxnc
-TASK: TASKNAME
+TASK: Do You Know Your ABCs?
 LANG: C++
 */
 
 //#include <bits/stdc++.h>
 #include <iostream>
-#include <fstream>
 #include <cmath>
 #include <vector>
 #include <algorithm>
@@ -20,8 +19,6 @@ int N;
 
 int main() {
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
-	//ifstream fin("TASKNAME.in");
-	//ofstream fout("TASKNAME.out");
 
 	cin >> N;
 
